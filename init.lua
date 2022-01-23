@@ -1,4 +1,18 @@
 
+function register_road_slab(itemstring)
+	local nodedef = table.copy(minetest.registered_nodes["simple_roads:"..itemstring])
+
+	nodedef.description = nodedef.description .. " Slab"
+
+	nodedef.drawtype = "nodebox"
+	nodedef.paramtype = "light"
+	nodedef.node_box = {
+		type = "fixed",
+		fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
+	}
+
+	minetest.register_node("simple_roads:"..itemstring.."_slab", nodedef)
+end
 
 minetest.register_node("simple_roads:road", {
 	description = "Road",
@@ -83,44 +97,6 @@ minetest.register_node("simple_roads:road_side_corner_parking_flipped", {
 	paramtype2 = "facedir"
 })
 
-minetest.register_node("simple_roads:road_slab", {
-	description = "Road Slab",
-	drawtype = "nodebox",
-	tiles = {"road.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	is_ground_content = false,
-	groups = {cracky = 3},
-	node_box = {
-		type = "fixed",
-		fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-	},
-})
-
-minetest.register_node("simple_roads:road_middleline_broken_slab", {
-	description = "Road Middleline Broken Slab",
-	drawtype = "nodebox",
-	tiles = {"road_middleline_broken.png", "road.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	is_ground_content = false,
-	groups = {cracky = 3},
-	node_box = {
-		type = "fixed",
-		fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-	},
-})
-
-minetest.register_node("simple_roads:road_side_slab", {
-	description = "Road Side Slab",
-	drawtype = "nodebox",
-	tiles = {"road_side.png", "road.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	is_ground_content = false,
-	groups = {cracky = 3},
-	node_box = {
-		type = "fixed",
-		fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-	},
-})
+register_road_slab("road")
+register_road_slab("road_middleline_broken")
+register_road_slab("road_side")
