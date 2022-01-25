@@ -22,7 +22,10 @@ minetest.register_node("simple_roads:road", {
 
 minetest.register_node("simple_roads:road_middleline_broken", {
 	description = "Road Middleline Broken",
-	tiles = {"road_middleline_broken.png", "road.png"},
+	tiles = {
+		"road_middleline_broken.png",
+		"road.png", "road.png", "road.png",
+		"road_middleline_broken.png" },
 	groups = {cracky = 3},
 	paramtype2 = "facedir"
 })
@@ -36,7 +39,10 @@ minetest.register_node("simple_roads:road_middleline_broken_turn", {
 
 minetest.register_node("simple_roads:road_middleline_single", {
 	description = "Road Middleline Single",
-	tiles = {"road_middleline_single.png", "road.png"},
+	tiles = {
+		"road_middleline_single.png",
+		"road.png", "road.png", "road.png",
+		"road_middleline_single.png" },
 	groups = {cracky = 3},
 	paramtype2 = "facedir"
 })
@@ -50,7 +56,11 @@ minetest.register_node("simple_roads:road_middleline_single_turn", {
 
 minetest.register_node("simple_roads:road_side", {
 	description = "Road Side",
-	tiles = {"road_side.png", "road.png"},
+	tiles = {
+		"road_side.png",
+		"road.png", "road.png", "road.png",
+		"road_side.png^[transformFX",
+		"road_side.png" },
 	groups = {cracky = 3},
 	paramtype2 = "facedir"
 })
