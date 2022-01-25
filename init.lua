@@ -92,7 +92,7 @@ minetest.register_node("simple_roads:road_side_corner_parking", {
 
 minetest.register_node("simple_roads:road_side_corner_parking_flipped", {
 	description = "Road Side Corner (Parking) (Flipped)",
-	tiles = {"road_side_corner_parking_flipped.png", "road.png"},
+	tiles = {"road_side_corner_parking.png^[transformFY", "road.png"},
 	groups = {cracky = 3},
 	paramtype2 = "facedir"
 })
