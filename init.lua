@@ -109,4 +109,5 @@ minetest.register_node("simple_roads:road_side_corner_parking_flipped", {
 
 register_road_slab("road")
 register_road_slab("road_middleline_broken")
+register_road_slab("road_middleline_single")
 register_road_slab("road_side")
